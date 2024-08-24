@@ -1,0 +1,288 @@
+ *{
+    box-sizing: border-box;
+  }
+  
+  body {
+    display: grid;
+    place-items: center;
+    gap: 50px;
+    margin: 0;
+    height: 95vh;
+    padding: 0 32px;
+    background: #effffb;
+    font-family: Montserrat;
+  }
+  
+  @media (width >= 500px) {
+    body {
+      padding: 0;
+    }
+  }
+  
+  .background {
+    position: fixed;
+    top: -50vmin;
+    left: -50vmin;
+    width: 100vmin;
+    height: 100vmin;
+    border-radius: 47% 53% 61% 39% / 45% 51% 49% 55%;
+    background: #8effdd;
+  }
+  
+  .background::after {
+    content: "";
+    position: inherit;
+    right: -50vmin;
+    bottom: -55vmin;
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+    background: #1cb475b9;
+  }
+  
+  .card {
+    overflow: hidden;
+    position: relative;
+    z-index: 3;
+    width: 94%;
+    margin: 0 20px;
+    padding: 170px 30px 54px;
+    border-radius: 24px;
+    background: #ffffff;
+    text-align: center;
+    font: "Inter";
+    box-shadow: 0 100px 100px rgb(0 0 0 / 30%);
+  }
+  
+  .card::before {
+    content: "";
+    position: absolute;
+    top: -880px;
+    left: 50%;
+    translate: -50% 0;
+    width: 1000px;
+    height: 1000px;
+    border-radius: 50%;
+    background: #21e784;
+  }
+  
+  @media (width >= 500px) {
+    .card {
+      margin: 0;
+      width: 360px;
+    }
+  }
+  
+  .card .logo {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    translate: -50% 0;
+    width: 120px;
+    height: 100px;
+    color: rgb(255, 255, 255)
+  }
+  
+  .card > h2 {
+    font-size: 22px;
+    font-weight: 400;
+    margin: 0 0 38px;
+    color: rgb(0 0 0 / 38%);
+  }
+  
+  .form {
+    margin: 0 0 44px;
+    display: grid;
+    gap: 12px;
+  }
+
+  .form :is(input, button) {
+    width: 100%;
+    height: 56px;
+    border-radius: 28px;
+    font-size: 16px;
+    font-family: inherit;
+  }
+  
+  .form > input {
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+    font-weight: 500;
+    font-size: 1vw;
+    color: #000000;
+    background-color: rgba(255, 255, 255, 0);
+    box-shadow: 0 0 .4vw rgba(0,0,0,0.5), 0 0 0 .15vw transparent;
+    border-radius: 0.4vw;
+    border: none;
+    outline: none;
+    padding: 0.4vw;
+    transition: .4s;
+  }
+  
+  .form > input:hover {
+    box-shadow: 0 0 0 .15vw rgba(35, 196, 132, 0.555);
+  }
+  
+  .form > input:focus {
+    box-shadow: 0 0 0 .15vw rgb(35, 196, 131);
+  }
+
+  .form > button {
+    padding: 1.3em 3em;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #f5f5f5;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.192);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  }
+
+  .form > button:hover {
+    background-color: #23c483;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+  }
+
+  .form > button:active {
+    transform: translateY(-1px);
+  }
+  
+  .card > footer {
+    color: #a1a1a1;
+  }
+  
+  .card > footer > a {
+    color: #216ce7;
+  }
+  
+  .otherlogin {
+    max-width: 320px;
+    display: flex;
+    padding: 0.5rem 1.4rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    align-items: center;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    gap: 1.8rem;
+    color: rgb(65, 63, 63);
+    background-color: #fff;
+    cursor: pointer;
+    transition: all .4s ease;
+  }
+  
+  .otherlogin svg {
+    height: 24px;
+  }
+  
+  .otherlogin:hover {
+    transform: scale(1.1);
+  }
+
+#otp {
+  z-index: 4;
+  background-color: rgba(0, 0, 0, 0);
+  border: rgba(0, 0, 0, 0);
+}
+
+.otp-Form {
+  width: 230px;
+  height: 300px;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 30px;
+  gap: 20px;
+  position: relative;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.308);
+  border-radius: 15px;
+}
+
+.mainHeading {
+  font-size: .95em;
+  color: rgb(15, 15, 15);
+  font-weight: 700;
+}
+
+.otpSubheading {
+  font-size: 0.8em;
+  color: black;
+  line-height: 17px;
+  text-align: center;
+}
+
+.inputContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.otp-input {
+  background-color: rgb(228, 228, 228);
+  width: 250px;
+  height: 30px;
+  text-align: center;
+  border: none;
+  border-radius: 7px;
+  caret-color: rgb(127, 129, 255);
+  color: rgb(44, 44, 44);
+  outline: none;
+  font-weight: 600;
+}
+
+.otp-input:focus,
+.otp-input:valid {
+  background-color: rgba(127, 129, 255, 0.199);
+  transition-duration: .3s;
+}
+
+.verifyButton {
+  width: 100%;
+  height: 30px;
+  border: none;
+  background-color: rgb(35, 196, 131);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 10px;
+  transition-duration: .2s;
+}
+
+.verifyButton:hover {
+  background-color: rgb(22, 255, 162);
+  transition-duration: .2s;
+}
+
+.exitBtn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.171);
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  border: none;
+  color: black;
+  font-size: 1.1em;
+  cursor: pointer;
+}
+
+.exitBtn:hover {
+  background-color: #ff36368a;
+  color: #ffffff;
+  transition: .5s;
+}
