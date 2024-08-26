@@ -71,8 +71,13 @@
                   <img class="vector" src="ticket.png">
                   <div>
                     <span>Ticket Ida ou Volta</span>
-                    <p>Rota 1</p>
-                    <p>19/08/2024</p>
+                    <form>
+                      <p for="rotas">Rota:</p>
+                      <select class="escolha" name="rotas" id="rotas">
+                          <option class="opcao" value="rota1">Rota 1</option>
+                          <option value="rota2">Rota 2</option>
+                      </select>
+                    </form>
                   </div>
                   <div class="quantity">
                     <button onclick="decreaseQnt()">
@@ -87,18 +92,36 @@
                       </svg>
                     </button>
                   </div>
-                  <label class="price small">R$ 2.50</label>
+                  <label class="price small">R$ 2.5</label>
                 </div>
+              </div>
+            </div>
+            <div class="card payment">
+              <label class="title">Detalhes do Pagamento</label>
+              <div class="details">
+                <span>Forma de Pagamento:</span>
+                <span id="metodo">
+                  <form>
+                    <select class="escolha2" name="metodopg" id="metodopg">
+                        <option class="opcao" value="pix">Pix</option>
+                        <option value="cartao">Cartão</option>
+                    </select>
+                  </form>
+                </span>
+                <span>Agendar Horário:</span>
+                <span><form>
+                  <input class="escolha2" type="date">
+                </form></span>
               </div>
             </div>
             <div class="card checkout">
               <label class="title">Checkout</label>
               <div class="details">
                 <span>Total:</span>
-                <span id="total">R$ 5,00</span>
+                <span id="total">R$ 2.5</span>
               </div>
               <div class="checkout--footer">
-                <label id="final" class="price">R$ 5.00</label>
+                <label id="final" class="price">R$ 2.5</label>
                 <button onclick="openTeladePagamento('pagamento')"class="checkout-btn">Ir Para o Pagamento</button>
               </div>
             </div>
@@ -109,13 +132,22 @@
             <div class="settings-Bg">
             </div>
             <div class="pagamento-Main">
-              <h3>Tela de Pagamento</h3>
-              <ol class="settings-ol">
-                <li>
-                  <p>Tema Escuro</p>
+              <h3>Aguarde enquanto geramos seu Qr Code...</h3>
+              <div class="conteudo">
+                <div class="dot-spinner">
+                  <div class="dot-spinner__dot"></div>
+                  <div class="dot-spinner__dot"></div>
+                  <div class="dot-spinner__dot"></div>
+                  <div class="dot-spinner__dot"></div>
+                  <div class="dot-spinner__dot"></div>
+                  <div class="dot-spinner__dot"></div>
+                  <div class="dot-spinner__dot"></div>
+                  <div class="dot-spinner__dot"></div>
+              </div>
+              </div>
+              
                   <button onclick="openTeladePagamento('pagamento')" class="exitBtn">X</button>
-                </li>
-              </ol>
+
             </div>
             </dialog>
 
@@ -124,6 +156,7 @@
     <label class="logo">Ticket Bus</label>
     <ul>
         <div class="tabs">
+            <li><label class="tickets">Tickets: 0</label></li>
             <li><a class="tab active" id=in onclick="loader('in', 'Inicio')">Inicio</a></li>
             <li><a class="tab" id=ti onclick="loader('ti', 'Tickets')">Tickets</a></li>
             <li> <input id="checkbox" type="checkbox" onclick="openPerfil('settings', 'Perfil')">

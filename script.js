@@ -2,7 +2,7 @@ let delay = 1000;
 let qnt = 1;
 let bool, open, openperf, opensettings, openpag, openteladepag = false;
 let nameSett = null;
-let total = 5.00;
+let total = 2.50;
 let tot = total.toString()
 
 function changeTheme() {
