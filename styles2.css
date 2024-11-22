@@ -8,7 +8,7 @@
     user-select: none;
 }
 
-:root {
+.dark-theme {
   --primary-soft: rgb(243, 243, 243);
   --primary-color: rgb(255, 255, 255);
   --primary2-color: rgb(223, 223, 223);
@@ -22,7 +22,7 @@
   --details: #2B2B2F;
 }
 
-.dark-theme {
+:root {
   --primary-soft: rgb(39, 39, 39);
   --primary-color:  rgb(24, 24, 24);
   --primary2-color:  rgb(255, 255, 255);
@@ -64,10 +64,11 @@ body {
 }
 
 .logo {
+    position: absolute;
     color: #ffff;
-    font-size: 35px;
+    font-size: 3vw;
     line-height: 80px;
-    padding: 0 100px;
+    left: 10vw;
     font-weight: bold;
 }
 
@@ -75,7 +76,7 @@ body {
   z-index: 0;
   position: absolute;
   top: -10px;
-  left: 4%;
+  left: 5vw;
   translate: -50% 0;
   width: 120px;
   height: 100px;
@@ -103,7 +104,7 @@ nav ul li {
 nav ul li a {
     color: #ffffff;
     font-size: 17px;
-    padding: 7px 13px;
+    padding: 0.5vw 2vh;
     border-radius: 3px;
     text-transform: uppercase;
     cursor: pointer;
@@ -152,6 +153,9 @@ a:hover {
     flex-direction: column;
     border-radius: 8px;
     width: 200px;
+    position: absolute;
+    top: 2vw;
+    right: -13vw;
     background-color: var(--primary-soft);
     box-shadow: 0 0 .4vw var(--actual-shadow), 0 0 0 .15vw transparent;
     justify-content: center;
@@ -171,7 +175,7 @@ a:hover {
   
   .value:not(:active):hover,
   .value:focus {
-    background-color: #e7e7e7;
+    background-color: rgba(0, 0, 0, .15);
   }
   
   .value:focus,
@@ -1037,5 +1041,26 @@ a:hover {
   50% {
     transform: scale(1);
     opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .imglogo {
+    left: 15vw;
+  }
+  .logo{
+    left: 28vw;
+    font-size: 6vw;
+  }
+  nav ul li a{
+    display: none;
+  }
+  .toggle{
+    position: absolute;
+    top: 4vh;
+  }
+  .input{
+    position: absolute;
+    right: -7vw;
   }
 }
